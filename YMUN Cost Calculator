@@ -1,0 +1,52 @@
+"""
+Eric Liu's Very Useful YMUN XLVI Per-Person Cost Calculator
+For the Bergen Tech Independent Delegation
+
+TO USE, SIMPLY GO TO ANYTHING THAT CAN RUN PYTHON AND COPY AND PASTE THIS CODE.
+
+1) Constants:
+    Delegate fee
+    Advisor fee
+
+2) Inputs:
+    Attendees
+    Hotel cost
+
+Assumed that advisor's hotel cost will be covered by attendees.
+
+3) Calculations:
+    Total cost = Hotel cost + Delegate fee * Attendees + Advisor fee
+    20% deposit = Total cost * 0.2
+    Per Person Hotel = Hotel cost / Attendees
+    Per Person cost = Per Person Hotel + Delegate fee
+    
+Display calculations with two decimal places.
+    
+"""
+
+# Initialisation of the constants
+
+Delegate_fee = 80
+Advisor_fee = 60
+
+# Creating inputs
+Attendees = float(input("How many people will be attending as delegates? "))
+Hotel_cost = float(input("What is the total cost of the hotels, in US Dollars? "))
+
+# Performing calculations
+Total_cost = Hotel_cost + Delegate_fee * Attendees + Advisor_fee
+Twenty_deposit = Total_cost * 0.2
+Per_person_hotel = Hotel_cost / Attendees
+Per_person_cost = Per_person_hotel + Delegate_fee
+
+# Rounding
+Rounded_total_cost = format(Total_cost, ".2f")
+Rounded_deposit = format(Twenty_deposit, ".2f")
+Rounded_per_person_cost = format(Per_person_cost, ".2f")
+
+# Answers
+print("Hello there!")
+print("The total cost for this entire trip is $" + str(Rounded_total_cost) + ".")
+print("The 20% deposit due upon registration is $" + str(Rounded_deposit) + ".")
+print("The amount of money each attending delegate will need to pay is $" + str(Rounded_per_person_cost) + ".")
+print("Have fun at YMUN and keep on getting those gavels!")
